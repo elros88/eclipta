@@ -3,7 +3,7 @@ extends KinematicBody2D
 var velocity = Vector2(0,0)
 
 const GRAVITY = 35
-const SPEED = 100
+const SPEED = 200
 const JUMP = -900
 
 func _physics_process(delta):
