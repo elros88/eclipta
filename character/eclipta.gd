@@ -6,6 +6,9 @@ const GRAVITY = 35
 const SPEED = 200
 const JUMP = -900
 
+export var life = 3
+var saved_friends = 0
+
 func _physics_process(delta):
 	if Input.is_action_pressed("right"):
 		velocity.x = SPEED 
