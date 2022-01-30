@@ -6,12 +6,7 @@ func _ready():
 	pass
 
 
-func _on_potion_collected():
-	life += RECOVER
-	life = 6 if life >= 6 else life
-
-	print(life)
-	
+func update_life():
 	if life == 1:
 		$Panel/healthbar.play("1")
 	if life == 2:
@@ -24,5 +19,9 @@ func _on_potion_collected():
 		$Panel/healthbar.play("5")
 	if life == 6:
 		$Panel/healthbar.play("6")
-		
+	
 
+func _on_potion_collected():
+	life += RECOVER
+	life = 6 if life >= 6 else life
+	update_life()

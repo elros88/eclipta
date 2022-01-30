@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://character/eclipta.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/test-tiles.tres" type="TileSet" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://levels/sky.tres" type="SpriteFrames" id=6]
 [ext_resource path="res://levels/Level-1-Indicator.gd" type="Script" id=7]
 [ext_resource path="res://levels/level-1.gd" type="Script" id=8]
+[ext_resource path="res://character/sadness.tscn" type="PackedScene" id=9]
 [ext_resource path="res://resource/background/clouds1.png" type="Texture" id=10]
 [ext_resource path="res://resource/background/clouds0.png" type="Texture" id=11]
 
@@ -27,7 +28,7 @@ extents = Vector2( 352, 18.5 )
 extents = Vector2( 320, 16 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 378.75, 12.75 )
+extents = Vector2( 385, 16 )
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 224, 17.75 )
@@ -136,6 +137,8 @@ tile_data = PoolIntArray( -851966, 0, 0, -851965, 0, 0, -851964, 0, 0, -851963, 
 
 [node name="StaticBody2D" type="StaticBody2D" parent="CrossTiles"]
 position = Vector2( 1311, -29 )
+collision_layer = 2
+collision_mask = 9
 
 [node name="Platform 1" type="CollisionShape2D" parent="CrossTiles/StaticBody2D"]
 position = Vector2( 1061.19, 829 )
@@ -163,7 +166,7 @@ shape = SubResource( 6 )
 one_way_collision = true
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="CrossTiles/StaticBody2D"]
-position = Vector2( 102.25, 560.25 )
+position = Vector2( 96, 557 )
 shape = SubResource( 8 )
 one_way_collision = true
 
@@ -284,5 +287,10 @@ drag_margin_h_enabled = true
 [node name="Potion1" parent="." instance=ExtResource( 5 )]
 position = Vector2( 224, -864 )
 
+[node name="Foe1" parent="." instance=ExtResource( 9 )]
+position = Vector2( 960, 736 )
+message = "Aqui Escribo"
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="potion_collected" from="Potion1" to="Indicator" method="_on_potion_collected"]
+[connection signal="hit_something" from="Foe1" to="." method="_on_Foe1_hit_something"]
