@@ -72,6 +72,9 @@ yellow={
 2d_physics/layer_3="item"
 2d_physics/layer_4="foe"
 2d_physics/layer_5="attack"
+2d_physics/layer_6="yellow"
+2d_physics/layer_7="red"
+2d_physics/layer_8="green"
 
 [physics]
 

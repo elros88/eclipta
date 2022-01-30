@@ -11,7 +11,7 @@ var friends_saved = 0
 var audio_file = "res://resource/sound/Level I Loop.wav"
 
 func _ready():
-	$Timer.set_wait_time(32)
+	$Timer.set_wait_time(4)
 	$Timer.start()
 	$Messages/redattack.visible = false
 	$Messages/greenattack.visible = false
@@ -77,11 +77,11 @@ func _on_Door_exit_level():
 func _on_Foe_saved():
 	friends_saved += 1
 	if friends_saved < friends:
-		$Item/Door/AnimatedSprite.play("close")
-		$Item/Door.open = false
+		$Items/Door/AnimatedSprite.play("close")
+		$Items/Door.open = false
 	else:
-		$Item/Door/AnimatedSprite.play("open")
-		$Item/Door.open = true
+		$Items/Door/AnimatedSprite.play("open")
+		$Items/Door.open = true
 
 
 func _physics_process(delta):

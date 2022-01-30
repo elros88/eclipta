@@ -169,7 +169,7 @@ position = Vector2( -5.68434e-14, -128 )
 scale = Vector2( 7.5, 5.8125 )
 frames = SubResource( 29 )
 animation = "sun"
-frame = 9
+frame = 5
 playing = true
 
 [node name="Mountains" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -377,6 +377,7 @@ position = Vector2( 2304, -96 )
 
 [node name="Foe3" parent="Foes" instance=ExtResource( 13 )]
 position = Vector2( -970, -83 )
+foe_type = 2
 
 [node name="Foe1" parent="Foes" instance=ExtResource( 9 )]
 position = Vector2( -1152, 576 )
@@ -384,6 +385,7 @@ message = "Aqui mensaje"
 
 [node name="Foe2" parent="Foes" instance=ExtResource( 12 )]
 position = Vector2( -448, 832 )
+foe_type = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 2304, -96 )

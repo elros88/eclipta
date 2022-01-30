@@ -27,6 +27,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Area2D_body_entered(body):
 	emit_signal("hitted")
-	if "Foe" in body.name:
+	if "Foe" in body.name and body.foe_type == 0:
 		body.save_friend()
 	queue_free()

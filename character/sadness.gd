@@ -5,7 +5,7 @@ var eclipse = false
 export var direction = -1
 export (String, MULTILINE) var message = ""
 export var foe_saved = false
-
+export var foe_type = 0
 const GRAVITY = 35
 const SPEED = 100
 

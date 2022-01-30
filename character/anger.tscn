@@ -5,6 +5,9 @@
 [ext_resource path="res://resource/foes/foe-2/enojo1.png" type="Texture" id=3]
 [ext_resource path="res://character/sadness.gd" type="Script" id=4]
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 19.5, 21.5 )
+
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 2 ) ],
@@ -18,16 +21,17 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 19.5, 21.5 )
-
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 4, 17 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 collision_layer = 8
-collision_mask = 19
+collision_mask = 67
 script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.5, 4.5 )
+shape = SubResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
@@ -36,10 +40,6 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.5, 4.5 )
-shape = SubResource( 4 )
-
 [node name="Floor_Checker" type="RayCast2D" parent="."]
 enabled = true
 collision_mask = 2
@@ -47,7 +47,7 @@ collide_with_areas = true
 
 [node name="Side_Checker" type="Area2D" parent="."]
 collision_layer = 8
-collision_mask = 17
+collision_mask = 65
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Side_Checker"]
 position = Vector2( -22, 3 )
