@@ -1,15 +1,24 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://levels/title.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://resource/title-screen/titlebg.png" type="Texture" id=2]
 [ext_resource path="res://levels/title.gd" type="Script" id=3]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 512, 300 )
 script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -514.0
+margin_top = -305.0
+margin_right = 1022.0
+margin_bottom = 595.0
+texture = ExtResource( 2 )
 __meta__ = {
-"_edit_group_": true
+"_edit_use_anchors_": false
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="TextureRect"]
+position = Vector2( 510, 303 )
 frames = ExtResource( 1 )
 playing = true
