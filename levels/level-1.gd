@@ -15,6 +15,7 @@ func _on_Timer_timeout():
 	bg_counter = 0 if bg_counter > PHASES else bg_counter
 	
 	if bg_counter == 0:
+		$Player.eclipse = false
 		$ParallaxBackground/Sky/AnimatedSprite.play("sun-1")
 	if bg_counter == 1:
 		$ParallaxBackground/Sky/AnimatedSprite.play("sun-2")
@@ -23,4 +24,4 @@ func _on_Timer_timeout():
 		$Player.eclipse = true
 	if bg_counter == 3:
 		$ParallaxBackground/Sky/AnimatedSprite.play("sun-2")
-		$Player.eclipse = false
+		
