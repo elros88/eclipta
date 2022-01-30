@@ -70,8 +70,7 @@ func _on_Foe_hit_something():
 
 func _on_Door_exit_level():
 	if friends_saved >= friends:
-		print("WIN")
-
+		get_tree().change_scene("res://character/credits.tscn")
 
 
 func _on_Foe_saved():
