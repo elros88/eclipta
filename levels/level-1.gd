@@ -95,11 +95,13 @@ func _physics_process(delta):
 
 func _on_Red_red_collected():
 	$Messages/redattack.visible = true
+	$Player.redattack = true
 
 
 func _on_Yellow_yellow_collected():
 	$Messages/yellowattack.visible = true
-
+	$Player.yellowattack = true
 
 func _on_Green_green_collected():
 	$Messages/greenattack.visible = true
+	$Player.greenattack = true

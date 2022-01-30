@@ -11,6 +11,9 @@ const YELLOW = preload("res://character/yellow-attack.tscn")
 const RED = preload("res://character/red-attack.tscn")
 const GREEN = preload("res://character/green-attack.tscn")
 
+var yellowattack = false
+var redattack = false
+var greenattack = false
 
 export var life = 3
 var saved_friends = 0
@@ -51,7 +54,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = JUMP
 		
-	if Input.is_action_just_pressed("yellow"):
+	if Input.is_action_just_pressed("yellow") and yellowattack:
 		var yellow = YELLOW.instance()
 		if sign($Position2D.position.x) == -1:
 			yellow.set_attack_direction(-1)
@@ -59,12 +62,13 @@ func _physics_process(delta):
 			yellow.set_attack_direction(1)
 		get_parent().add_child(yellow)
 		yellow.position = $Position2D.global_position
+		
 		if not eclipse:
 			$AnimatedSprite.play("attack")
 		else:
 			$AnimatedSprite.play("attack-night")
 		
-	if Input.is_action_just_pressed("green"):
+	if Input.is_action_just_pressed("green") and greenattack:
 		var green = GREEN.instance()
 		if sign($Position2D.position.x) == -1:
 			green.set_attack_direction(-1)
@@ -77,7 +81,7 @@ func _physics_process(delta):
 		else:
 			$AnimatedSprite.play("attack-night")
 		
-	if Input.is_action_just_pressed("red"):
+	if Input.is_action_just_pressed("red") and redattack:
 		var red = RED.instance()
 		if sign($Position2D.position.x) == -1:
 			red.set_attack_direction(-1)
