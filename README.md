@@ -1,4 +1,4 @@
-# eclipsa
+# Eclipsa
 
 Eclipsa is a girl trap in a world of endless solar eclipse that turns her friends into their worst emotion. Save Eclipsa's friends and enjoy the last eclipse.
 
