@@ -169,7 +169,7 @@ position = Vector2( -5.68434e-14, -128 )
 scale = Vector2( 7.5, 5.8125 )
 frames = SubResource( 29 )
 animation = "sun"
-frame = 6
+frame = 9
 playing = true
 
 [node name="Mountains" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -377,14 +377,65 @@ position = Vector2( 2304, -96 )
 
 [node name="Foe3" parent="Foes" instance=ExtResource( 13 )]
 position = Vector2( -970, -83 )
+message = "El eclipse me pone
+melancólica"
+foe_type = 2
+
+[node name="Foe9" parent="Foes" instance=ExtResource( 13 )]
+position = Vector2( 453, -451 )
+message = "Estoy tan sola"
+foe_type = 2
+
+[node name="Foe10" parent="Foes" instance=ExtResource( 13 )]
+position = Vector2( 741, -4 )
+message = "sniff, sniff
+T.T"
+foe_type = 2
+
+[node name="Foe6" parent="Foes" instance=ExtResource( 13 )]
+position = Vector2( -408, -575 )
+message = "Que triste estar solo 
+aquí"
 foe_type = 2
 
 [node name="Foe1" parent="Foes" instance=ExtResource( 9 )]
 position = Vector2( -1152, 576 )
-message = "Aqui mensaje"
+message = "Quiero amigos
+para abrir esa 
+puerta, que 
+envidia"
+
+[node name="Foe7" parent="Foes" instance=ExtResource( 9 )]
+position = Vector2( -606, -257 )
+message = "Ella es la más bonita,
+envidio a quien sea su
+novia"
 
 [node name="Foe2" parent="Foes" instance=ExtResource( 12 )]
-position = Vector2( -448, 832 )
+position = Vector2( 736, 834 )
+message = "¡No puedo ver
+el eclipse desde
+aquí, que rabia!"
+foe_type = 1
+
+[node name="Foe8" parent="Foes" instance=ExtResource( 12 )]
+position = Vector2( -1590, -638 )
+message = "Subí hasta aquí para esto.
+¡Que molesto!"
+foe_type = 1
+
+[node name="Foe5" parent="Foes" instance=ExtResource( 12 )]
+position = Vector2( 112, 448 )
+message = "Este lugar es mío.
+¡Me molesta que estés 
+aquí!"
+foe_type = 1
+
+[node name="Foe4" parent="Foes" instance=ExtResource( 12 )]
+position = Vector2( -1583, 836 )
+message = "Ojalá, supiera  que 
+hace la barra espaciadora.
+¡que molesto!"
 foe_type = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -396,10 +447,10 @@ max_distance = 10000.0
 [node name="Messages" type="Node2D" parent="."]
 
 [node name="redattack" type="Panel" parent="Messages"]
-margin_left = 671.0
-margin_top = 550.0
-margin_right = 799.0
-margin_bottom = 614.0
+margin_left = 1710.0
+margin_top = 578.0
+margin_right = 1838.0
+margin_bottom = 642.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -448,20 +499,32 @@ margin_left = 14.0
 margin_top = 5.0
 margin_right = 96.0
 margin_bottom = 53.0
-text = "Presiona  Z
+text = "Presiona Z
 para cantarle
-a  la tristeza"
+a la tristeza"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Items" type="Node2D" parent="."]
 
 [node name="Potion1" parent="Items" instance=ExtResource( 5 )]
 position = Vector2( 224, -864 )
 
+[node name="Potion2" parent="Items" instance=ExtResource( 5 )]
+position = Vector2( 2592, 97 )
+
+[node name="Potion3" parent="Items" instance=ExtResource( 5 )]
+position = Vector2( 1604, 484 )
+
+[node name="Potion4" parent="Items" instance=ExtResource( 5 )]
+position = Vector2( 2261, -669 )
+
 [node name="Door" parent="Items" instance=ExtResource( 28 )]
 position = Vector2( 4096, -352 )
 
 [node name="Red" parent="Items" instance=ExtResource( 30 )]
-position = Vector2( 736, 736 )
+position = Vector2( 1767, 738 )
 
 [node name="Yellow" parent="Items" instance=ExtResource( 32 )]
 position = Vector2( 512, 64 )
@@ -472,11 +535,28 @@ position = Vector2( 2048, -32 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="hit_something" from="Foes/Foe3" to="." method="_on_Foe_hit_something"]
 [connection signal="saved" from="Foes/Foe3" to="." method="_on_Foe_saved"]
+[connection signal="hit_something" from="Foes/Foe9" to="." method="_on_Foe_hit_something"]
+[connection signal="saved" from="Foes/Foe9" to="." method="_on_Foe_saved"]
+[connection signal="hit_something" from="Foes/Foe10" to="." method="_on_Foe_hit_something"]
+[connection signal="saved" from="Foes/Foe10" to="." method="_on_Foe_saved"]
+[connection signal="hit_something" from="Foes/Foe6" to="." method="_on_Foe_hit_something"]
+[connection signal="saved" from="Foes/Foe6" to="." method="_on_Foe_saved"]
 [connection signal="hit_something" from="Foes/Foe1" to="." method="_on_Foe_hit_something"]
 [connection signal="saved" from="Foes/Foe1" to="." method="_on_Foe_saved"]
+[connection signal="hit_something" from="Foes/Foe7" to="." method="_on_Foe_hit_something"]
+[connection signal="saved" from="Foes/Foe7" to="." method="_on_Foe_saved"]
 [connection signal="hit_something" from="Foes/Foe2" to="." method="_on_Foe_hit_something"]
 [connection signal="saved" from="Foes/Foe2" to="." method="_on_Foe_saved"]
+[connection signal="hit_something" from="Foes/Foe8" to="." method="_on_Foe_hit_something"]
+[connection signal="saved" from="Foes/Foe8" to="." method="_on_Foe_saved"]
+[connection signal="hit_something" from="Foes/Foe5" to="." method="_on_Foe_hit_something"]
+[connection signal="saved" from="Foes/Foe5" to="." method="_on_Foe_saved"]
+[connection signal="hit_something" from="Foes/Foe4" to="." method="_on_Foe_hit_something"]
+[connection signal="saved" from="Foes/Foe4" to="." method="_on_Foe_saved"]
 [connection signal="potion_collected" from="Items/Potion1" to="Indicator" method="_on_potion_collected"]
+[connection signal="potion_collected" from="Items/Potion2" to="Indicator" method="_on_potion_collected"]
+[connection signal="potion_collected" from="Items/Potion3" to="Indicator" method="_on_potion_collected"]
+[connection signal="potion_collected" from="Items/Potion4" to="Indicator" method="_on_potion_collected"]
 [connection signal="exit_level" from="Items/Door" to="." method="_on_Door_exit_level"]
 [connection signal="red_collected" from="Items/Red" to="." method="_on_Red_red_collected"]
 [connection signal="yellow_collected" from="Items/Yellow" to="." method="_on_Yellow_yellow_collected"]
