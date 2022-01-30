@@ -56,6 +56,7 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("yellow") and yellowattack:
 		var yellow = YELLOW.instance()
+		$Poder1.play()
 		if sign($Position2D.position.x) == -1:
 			yellow.set_attack_direction(-1)
 		else:
@@ -70,6 +71,7 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("green") and greenattack:
 		var green = GREEN.instance()
+		$Poder2.play()
 		if sign($Position2D.position.x) == -1:
 			green.set_attack_direction(-1)
 		else:
@@ -83,6 +85,7 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("red") and redattack:
 		var red = RED.instance()
+		$Poder3.play()
 		if sign($Position2D.position.x) == -1:
 			red.set_attack_direction(-1)
 		else:
