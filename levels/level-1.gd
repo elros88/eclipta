@@ -11,7 +11,7 @@ var friends_saved = 0
 var audio_file = "res://resource/sound/Level I Loop.wav"
 
 func _ready():
-	$Timer.set_wait_time(4)
+	$Timer.set_wait_time(32)
 	$Timer.start()
 	$Messages/redattack.visible = false
 	$Messages/greenattack.visible = false
