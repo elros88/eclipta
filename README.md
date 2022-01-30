@@ -7,6 +7,10 @@ Eclipsa is a girl trap in a world of endless solar eclipse that turns her friend
 - Deriree Urbina / 2D Art
 - Elias Viña / 3D Art
 - Andrea González / Music & Sound Effects
+
+# Gamejam Site
+https://globalgamejam.org/2022/games/eclipsa-6
+
 # Gameplay
 https://www.youtube.com/watch?v=bZq4JOoiGEk
 
