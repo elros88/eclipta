@@ -7,6 +7,8 @@ Eclipsa is a girl trap in a world of endless solar eclipse that turns her friend
 - Deriree Urbina / 2D Art
 - Elias Viña / 3D Art
 - Andrea González / Music & Sound Effects
+# Gameplay
+https://www.youtube.com/watch?v=bZq4JOoiGEk
 
 # Where to play
 http://165.227.63.152/juego/eclipsa/build/
