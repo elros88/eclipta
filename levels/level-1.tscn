@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://character/eclipta.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/test-tiles.tres" type="TileSet" id=2]
@@ -76,6 +76,12 @@ extents = Vector2( 160, 16 )
 
 [sub_resource type="RectangleShape2D" id=24]
 extents = Vector2( 192, 16 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 77.75, 1056 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 98.25, 949.625 )
 
 [sub_resource type="StyleBoxFlat" id=25]
 bg_color = Color( 0.168627, 0.14902, 0.14902, 0.580392 )
@@ -240,6 +246,14 @@ position = Vector2( 2593, -147 )
 shape = SubResource( 24 )
 one_way_collision = true
 
+[node name="Limite 1" type="CollisionShape2D" parent="CrossTiles/StaticBody2D"]
+position = Vector2( -1395.25, -259 )
+shape = SubResource( 26 )
+
+[node name="Limite 2" type="CollisionShape2D" parent="CrossTiles/StaticBody2D"]
+position = Vector2( 3199, -141.375 )
+shape = SubResource( 27 )
+
 [node name="Indicator" type="CanvasLayer" parent="."]
 script = ExtResource( 7 )
 
@@ -263,6 +277,8 @@ position = Vector2( 512, 736 )
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 0, -72 )
 current = true
+limit_left = 0
+limit_right = 6500
 drag_margin_h_enabled = true
 
 [node name="Potion1" parent="." instance=ExtResource( 5 )]
