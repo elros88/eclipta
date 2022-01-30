@@ -4,13 +4,14 @@ var velocity = Vector2(0,0)
 var eclipse = false
 export var direction = -1
 export (String, MULTILINE) var message = ""
-export var saved = false
+export var foe_saved = false
 
 const GRAVITY = 35
 const SPEED = 100
 
 
 signal hit_something
+signal saved
 
 func _ready():
 	if direction == 1 and eclipse:
@@ -22,7 +23,7 @@ func _ready():
 
 func _physics_process(delta):
 	
-	if eclipse and not saved:
+	if eclipse and not foe_saved:
 		velocity.x = 50*direction
 		
 		if $Panel.visible:
@@ -52,5 +53,6 @@ func _on_Side_Checker_body_entered(body):
 
 func save_friend():
 	if eclipse:
+		emit_signal("saved")
 		eclipse = false
-		saved = true
+		foe_saved = true

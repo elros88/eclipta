@@ -52,8 +52,6 @@ margin_left = 5.0
 margin_top = 4.0
 margin_right = 75.0
 margin_bottom = 35.0
-text = "Esto es un 
-mensaje"
 align = 1
 max_lines_visible = 3
 __meta__ = {

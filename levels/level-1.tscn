@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://character/eclipta.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/test-tiles.tres" type="TileSet" id=2]
@@ -27,14 +27,11 @@
 [ext_resource path="res://resource/eclipse/10.png" type="Texture" id=25]
 [ext_resource path="res://resource/eclipse/6.png" type="Texture" id=26]
 [ext_resource path="res://resource/eclipse/3.png" type="Texture" id=27]
-[ext_resource path="res://resource/signs/Abajo.png" type="Texture" id=28]
-[ext_resource path="res://resource/signs/Arriba_OI.png" type="Texture" id=29]
-[ext_resource path="res://resource/signs/Abajo_OI.png" type="Texture" id=30]
-[ext_resource path="res://resource/signs/Izquierda.png" type="Texture" id=31]
-[ext_resource path="res://resource/signs/derecha.png" type="Texture" id=32]
-[ext_resource path="res://resource/signs/Arriba.png" type="Texture" id=33]
-[ext_resource path="res://resource/signs/Abajo_OD.png" type="Texture" id=34]
-[ext_resource path="res://resource/signs/Arriba_OD.png" type="Texture" id=35]
+[ext_resource path="res://items/door.tscn" type="PackedScene" id=28]
+[ext_resource path="res://resource/sound/Level I Loop.wav" type="AudioStream" id=29]
+[ext_resource path="res://items/red.tscn" type="PackedScene" id=30]
+[ext_resource path="res://items/green.tscn" type="PackedScene" id=31]
+[ext_resource path="res://items/yellow.tscn" type="PackedScene" id=32]
 
 [sub_resource type="SpriteFrames" id=29]
 animations = [ {
@@ -87,7 +84,7 @@ extents = Vector2( 224, 17.75 )
 extents = Vector2( 288, 16 )
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 384, 19.25 )
+extents = Vector2( 384, 20 )
 
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 352, 16 )
@@ -172,7 +169,7 @@ position = Vector2( -5.68434e-14, -128 )
 scale = Vector2( 7.5, 5.8125 )
 frames = SubResource( 29 )
 animation = "sun"
-frame = 7
+frame = 9
 playing = true
 
 [node name="Mountains" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -271,7 +268,7 @@ shape = SubResource( 10 )
 one_way_collision = true
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="CrossTiles/StaticBody2D"]
-position = Vector2( 33, -86.25 )
+position = Vector2( 33, -87 )
 shape = SubResource( 11 )
 one_way_collision = true
 
@@ -375,47 +372,110 @@ limit_left = 0
 limit_right = 6500
 drag_margin_h_enabled = true
 
-[node name="Potion1" parent="." instance=ExtResource( 5 )]
-position = Vector2( 224, -864 )
+[node name="Foes" type="Node2D" parent="."]
+position = Vector2( 2304, -96 )
 
-[node name="Foe3" parent="." instance=ExtResource( 13 )]
-position = Vector2( 928, 736 )
+[node name="Foe3" parent="Foes" instance=ExtResource( 13 )]
+position = Vector2( -970, -83 )
 
-[node name="Foe1" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1152, 480 )
+[node name="Foe1" parent="Foes" instance=ExtResource( 9 )]
+position = Vector2( -1152, 576 )
 message = "Aqui mensaje"
 
-[node name="Foe2" parent="." instance=ExtResource( 12 )]
-position = Vector2( 832, 736 )
+[node name="Foe2" parent="Foes" instance=ExtResource( 12 )]
+position = Vector2( -448, 832 )
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 2304, -96 )
+stream = ExtResource( 29 )
+autoplay = true
+max_distance = 10000.0
 
-[node name="Arriba" type="Sprite" parent="Node2D"]
-texture = ExtResource( 33 )
+[node name="Messages" type="Node2D" parent="."]
 
-[node name="Abajo" type="Sprite" parent="Node2D"]
-texture = ExtResource( 28 )
+[node name="redattack" type="Panel" parent="Messages"]
+margin_left = 671.0
+margin_top = 550.0
+margin_right = 799.0
+margin_bottom = 614.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
 
-[node name="Izquierda" type="Sprite" parent="Node2D"]
-texture = ExtResource( 31 )
+[node name="Label" type="Label" parent="Messages/redattack"]
+margin_left = 26.0
+margin_top = 7.0
+margin_right = 108.0
+margin_bottom = 55.0
+text = "Presiona  X
+para cantarle
+a la rabia"
 
-[node name="Derecha" type="Sprite" parent="Node2D"]
-texture = ExtResource( 32 )
+[node name="yellowattack" type="Panel" parent="Messages"]
+margin_left = 665.0
+margin_top = -82.0
+margin_right = 753.0
+margin_bottom = -25.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
 
-[node name="ArribaIzq" type="Sprite" parent="Node2D"]
-texture = ExtResource( 29 )
+[node name="Label" type="Label" parent="Messages/yellowattack"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 86.0
+margin_bottom = 52.0
+text = "Presiona  C 
+para cantarle
+a la envidia "
 
-[node name="ArribaDer" type="Sprite" parent="Node2D"]
-texture = ExtResource( 35 )
+[node name="greenattack" type="Panel" parent="Messages"]
+margin_left = 1931.0
+margin_top = -171.0
+margin_right = 2044.0
+margin_bottom = -110.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
 
-[node name="AbajoIzq" type="Sprite" parent="Node2D"]
-texture = ExtResource( 30 )
+[node name="Label" type="Label" parent="Messages/greenattack"]
+margin_left = 14.0
+margin_top = 5.0
+margin_right = 96.0
+margin_bottom = 53.0
+text = "Presiona  Z
+para cantarle
+a  la tristeza"
 
-[node name="AbajoDer" type="Sprite" parent="Node2D"]
-texture = ExtResource( 34 )
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Potion1" parent="Items" instance=ExtResource( 5 )]
+position = Vector2( 224, -864 )
+
+[node name="Door" parent="Items" instance=ExtResource( 28 )]
+position = Vector2( 4096, -352 )
+
+[node name="Red" parent="Items" instance=ExtResource( 30 )]
+position = Vector2( 736, 736 )
+
+[node name="Yellow" parent="Items" instance=ExtResource( 32 )]
+position = Vector2( 512, 64 )
+
+[node name="Green" parent="Items" instance=ExtResource( 31 )]
+position = Vector2( 2048, -32 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="potion_collected" from="Potion1" to="Indicator" method="_on_potion_collected"]
-[connection signal="hit_something" from="Foe3" to="." method="_on_Foe_hit_something"]
-[connection signal="hit_something" from="Foe1" to="." method="_on_Foe_hit_something"]
-[connection signal="hit_something" from="Foe2" to="." method="_on_Foe_hit_something"]
+[connection signal="hit_something" from="Foes/Foe3" to="." method="_on_Foe_hit_something"]
+[connection signal="saved" from="Foes/Foe3" to="." method="_on_Foe_saved"]
+[connection signal="hit_something" from="Foes/Foe1" to="." method="_on_Foe_hit_something"]
+[connection signal="saved" from="Foes/Foe1" to="." method="_on_Foe_saved"]
+[connection signal="hit_something" from="Foes/Foe2" to="." method="_on_Foe_hit_something"]
+[connection signal="saved" from="Foes/Foe2" to="." method="_on_Foe_saved"]
+[connection signal="potion_collected" from="Items/Potion1" to="Indicator" method="_on_potion_collected"]
+[connection signal="exit_level" from="Items/Door" to="." method="_on_Door_exit_level"]
+[connection signal="red_collected" from="Items/Red" to="." method="_on_Red_red_collected"]
+[connection signal="yellow_collected" from="Items/Yellow" to="." method="_on_Yellow_yellow_collected"]
+[connection signal="green_collected" from="Items/Green" to="." method="_on_Green_green_collected"]
