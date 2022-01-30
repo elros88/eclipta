@@ -5,7 +5,7 @@ var bg_counter = 0
 
 const PHASES = 3
 
-export var friends = 4
+export var friends = 7
 var friends_saved = 0
 
 var audio_file = "res://resource/sound/Level I Loop.wav"

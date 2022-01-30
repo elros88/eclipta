@@ -169,7 +169,7 @@ position = Vector2( -5.68434e-14, -128 )
 scale = Vector2( 7.5, 5.8125 )
 frames = SubResource( 29 )
 animation = "sun"
-frame = 9
+frame = 3
 playing = true
 
 [node name="Mountains" type="ParallaxLayer" parent="ParallaxBackground"]
