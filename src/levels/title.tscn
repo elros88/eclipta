@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://levels/title.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://resource/title-screen/titlebg.png" type="Texture" id=2]
+[ext_resource path="res://levels/title.gd" type="Script" id=3]
+[ext_resource path="res://resource/sound/INTRO.wav" type="AudioStream" id=4]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 512, 300 )
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -514.0
+margin_top = -305.0
+margin_right = 1022.0
+margin_bottom = 595.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -4, -2 )
+frames = ExtResource( 1 )
+playing = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
