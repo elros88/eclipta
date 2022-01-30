@@ -17,18 +17,22 @@ func _on_Timer_timeout():
 	if bg_counter == 0:
 		$Player.eclipse = false
 		$Foe1.eclipse = false
+		$Foe2.eclipse = false
+		$Foe3.eclipse = false
 		$ParallaxBackground/Sky/AnimatedSprite.play("sun-1")
 	if bg_counter == 1:
 		$ParallaxBackground/Sky/AnimatedSprite.play("sun-2")
 		$Player.eclipse = true
 		$Foe1.eclipse = true
+		$Foe2.eclipse = true
+		$Foe3.eclipse = true
 	if bg_counter == 2:
 		$ParallaxBackground/Sky/AnimatedSprite.play("sun-3")
 	if bg_counter == 3:
 		$ParallaxBackground/Sky/AnimatedSprite.play("sun-2")
 		
 
-func _on_Foe1_hit_something():
+func _on_Foe_hit_something():
 	$Indicator.life -= 1
 	$Indicator.update_life()
 	if $Indicator.life <= 0:

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/INTRO.wav-ad7624d0763d0d90f7234132f905c46f.sample"
+
+[deps]
+
+source_file="res://resource/sound/INTRO.wav"
+dest_files=[ "res://.import/INTRO.wav-ad7624d0763d0d90f7234132f905c46f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
