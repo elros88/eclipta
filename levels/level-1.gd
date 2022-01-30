@@ -28,10 +28,6 @@ func _on_Timer_timeout():
 		$ParallaxBackground/Sky/AnimatedSprite.play("sun-2")
 		
 
-
-
-
-
 func _on_Foe1_hit_something():
 	$Indicator.life -= 1
 	$Indicator.update_life()

@@ -289,7 +289,7 @@ position = Vector2( 224, -864 )
 
 [node name="Foe1" parent="." instance=ExtResource( 9 )]
 position = Vector2( 960, 736 )
-message = "Aqui Escribo"
+message = "Aqui mensaje"
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="potion_collected" from="Potion1" to="Indicator" method="_on_potion_collected"]
