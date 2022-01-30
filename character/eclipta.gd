@@ -59,6 +59,10 @@ func _physics_process(delta):
 			yellow.set_attack_direction(1)
 		get_parent().add_child(yellow)
 		yellow.position = $Position2D.global_position
+		if not eclipse:
+			$AnimatedSprite.play("attack")
+		else:
+			$AnimatedSprite.play("attack-night")
 		
 	if Input.is_action_just_pressed("green"):
 		var green = GREEN.instance()
@@ -68,6 +72,10 @@ func _physics_process(delta):
 			green.set_attack_direction(1)
 		get_parent().add_child(green)
 		green.position = $Position2D.global_position
+		if not eclipse:
+			$AnimatedSprite.play("attack")
+		else:
+			$AnimatedSprite.play("attack-night")
 		
 	if Input.is_action_just_pressed("red"):
 		var red = RED.instance()
@@ -77,6 +85,10 @@ func _physics_process(delta):
 			red.set_attack_direction(1)
 		get_parent().add_child(red)
 		red.position = $Position2D.global_position
+		if not eclipse:
+			$AnimatedSprite.play("attack")
+		else:
+			$AnimatedSprite.play("attack-night")
 		
 	velocity.y = velocity.y + GRAVITY	
 	velocity = move_and_slide(velocity, Vector2.UP)
