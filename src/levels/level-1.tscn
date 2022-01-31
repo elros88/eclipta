@@ -38,7 +38,7 @@ animations = [ {
 "frames": [ ExtResource( 18 ), ExtResource( 17 ), ExtResource( 27 ), ExtResource( 21 ), ExtResource( 19 ), ExtResource( 26 ), ExtResource( 20 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 25 ) ],
 "loop": true,
 "name": "sun",
-"speed": 0.06
+"speed": 0.01
 } ]
 
 [sub_resource type="SpriteFrames" id=28]
@@ -169,7 +169,7 @@ position = Vector2( -5.68434e-14, -128 )
 scale = Vector2( 7.5, 5.8125 )
 frames = SubResource( 29 )
 animation = "sun"
-frame = 3
+frame = 8
 playing = true
 
 [node name="Mountains" type="ParallaxLayer" parent="ParallaxBackground"]
