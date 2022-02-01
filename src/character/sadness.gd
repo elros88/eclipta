@@ -43,6 +43,10 @@ func _physics_process(delta):
 	
 	velocity.y = 20	
 	velocity = move_and_slide(velocity, Vector2.UP)
+	
+	if $Timer.is_stopped():
+		$Panel.visible = false
+
 
 func _on_Side_Checker_body_entered(body):
 	if eclipse:
@@ -50,6 +54,8 @@ func _on_Side_Checker_body_entered(body):
 		$Panel.visible = false
 	else:
 		$Panel.visible = true
+		$Timer.set_wait_time(10)
+		$Timer.start()
 
 func save_friend():
 	if eclipse:

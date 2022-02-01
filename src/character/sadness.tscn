@@ -62,4 +62,7 @@ __meta__ = {
 [node name="Scream" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="Side_Checker" to="." method="_on_Side_Checker_body_entered"]
