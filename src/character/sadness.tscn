@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://character/sadness.gd" type="Script" id=1]
 [ext_resource path="res://character/sadness.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://resource/sound/Mostricos-II.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 22.75, 25.75 )
@@ -57,5 +58,8 @@ max_lines_visible = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Scream" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="body_entered" from="Side_Checker" to="." method="_on_Side_Checker_body_entered"]

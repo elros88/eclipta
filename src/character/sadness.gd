@@ -56,3 +56,7 @@ func save_friend():
 		emit_signal("saved")
 		eclipse = false
 		foe_saved = true
+
+
+func play_scream():
+	$Scream.play()

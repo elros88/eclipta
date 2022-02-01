@@ -37,11 +37,8 @@ func _on_Timer_timeout():
 		$ParallaxBackground/Sky/AnimatedSprite.play("sun-1")
 		$ParallaxBackground/Mountains/AnimatedSprite.play("day")
 		$ParallaxBackground/Mountains2/AnimatedSprite.play("day")
-		audio_file = "res://resource/sound/Level I Loop.wav"
-		if File.new().file_exists(audio_file):
-			var sfx = load(audio_file) 
-			$AudioStreamPlayer2D.stream = sfx
-			$AudioStreamPlayer2D.play()
+		$EclipseSound.stop()
+		$DaySound.play()
 	if bg_counter == 1:
 		$ParallaxBackground/Sky/AnimatedSprite.play("sun-2")
 		$ParallaxBackground/Mountains/AnimatedSprite.play("transition")
@@ -57,11 +54,9 @@ func _on_Timer_timeout():
 		$Foes/Foe8.eclipse = true
 		$Foes/Foe9.eclipse = true
 		$Foes/Foe10.eclipse = true
-		audio_file = "res://resource/sound/Loop Eclipse.wav"
-		if File.new().file_exists(audio_file):
-			var sfx = load(audio_file) 
-			$AudioStreamPlayer2D.stream = sfx
-			$AudioStreamPlayer2D.play()
+		$TransitionSound.play()
+		$EclipseSound.play()
+		$DaySound.stop()
 			
 	if bg_counter == 2:
 		$ParallaxBackground/Sky/AnimatedSprite.play("sun-3")
@@ -89,6 +84,7 @@ func _on_Door_exit_level():
 
 func _on_Foe_saved():
 	friends_saved += 1
+	$MonsterScream.play()
 	if friends_saved < friends:
 		$Items/Door/AnimatedSprite.play("close")
 		$Items/Door.open = false
