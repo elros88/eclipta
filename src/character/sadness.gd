@@ -54,7 +54,7 @@ func _on_Side_Checker_body_entered(body):
 		$Panel.visible = false
 	else:
 		$Panel.visible = true
-		$Timer.set_wait_time(10)
+		$Timer.set_wait_time(3)
 		$Timer.start()
 
 func save_friend():
