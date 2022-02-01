@@ -24,6 +24,7 @@ func _on_Timer_timeout():
 	bg_counter = 0 if bg_counter > PHASES else bg_counter
 	
 	if bg_counter == 0:
+		$ParallaxBackground/Eclipse/AnimatedSprite.play("sun")
 		$Player.eclipse = false
 		$Foes/Foe1.eclipse = false
 		$Foes/Foe2.eclipse = false
@@ -41,6 +42,7 @@ func _on_Timer_timeout():
 		$EclipseSound.stop()
 		$DaySound.play()
 	if bg_counter == 1:
+		$ParallaxBackground/Eclipse/AnimatedSprite.play("1")
 		$ParallaxBackground/Sky/AnimatedSprite.play("sun-2")
 		$ParallaxBackground/Mountains/AnimatedSprite.play("transition")
 		$ParallaxBackground/Mountains2/AnimatedSprite.play("transition")
@@ -60,14 +62,15 @@ func _on_Timer_timeout():
 		$DaySound.stop()
 			
 	if bg_counter == 2:
+		$ParallaxBackground/Eclipse/AnimatedSprite.play("eclipse")
 		$ParallaxBackground/Sky/AnimatedSprite.play("sun-3")
 		$ParallaxBackground/Mountains/AnimatedSprite.play("night")
 		$ParallaxBackground/Mountains2/AnimatedSprite.play("night")
 	if bg_counter == 3:
+		$ParallaxBackground/Eclipse/AnimatedSprite.play("2")
 		$ParallaxBackground/Sky/AnimatedSprite.play("sun-2")
 		$ParallaxBackground/Mountains/AnimatedSprite.play("transition")
 		$ParallaxBackground/Mountains2/AnimatedSprite.play("transition")
-		
 
 
 func _on_Foe_hit_something():
