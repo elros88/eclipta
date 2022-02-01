@@ -6,6 +6,7 @@ var bg_counter = 0
 const PHASES = 3
 
 export var friends = 7
+export (String, MULTILINE) var message = ""
 var friends_saved = 0
 
 var audio_file = "res://resource/sound/Level I Loop.wav"
@@ -100,6 +101,9 @@ func _physics_process(delta):
 		$Messages/greenattack.visible = false
 	if Input.is_action_just_pressed("yellow"):
 		$Messages/yellowattack.visible = false
+		
+	if Input.is_action_pressed("A"):
+		$Panel.visible = false
 
 
 func _on_Red_red_collected():
