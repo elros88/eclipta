@@ -37,20 +37,20 @@ animations = [ {
 "name": "eclipse",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 18 ) ],
+"frames": [ ExtResource( 23 ) ],
 "loop": true,
-"name": "sun",
-"speed": 0.01
+"name": "2",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 27 ) ],
 "loop": true,
 "name": "1",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ) ],
+"frames": [ ExtResource( 18 ) ],
 "loop": true,
-"name": "2",
-"speed": 5.0
+"name": "sun",
+"speed": 0.01
 } ]
 
 [sub_resource type="SpriteFrames" id=28]
@@ -60,14 +60,14 @@ animations = [ {
 "name": "transition",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "night",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 14 ) ],
 "loop": true,
 "name": "day",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "night",
 "speed": 5.0
 } ]
 
